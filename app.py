@@ -134,7 +134,7 @@ option = st.sidebar.selectbox("Choose a feature", ["Chatbot", "News", "Research"
 if option == "Home":
     st.subheader("Welcome to the Sustainability Hub!")
     st.write("Explore news, research, and a chatbot focused on Sustainable Development Goals (SDGs).")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/e/e0/UN_SDG_Logo.png", width=300)
+    st.image("chatbot.png", width=300)
 
 elif option == "Chatbot":
     st.subheader("Chatbot for Sustainability")
