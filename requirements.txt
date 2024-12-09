@@ -3,3 +3,4 @@ wikipedia-api
 requests
 nltk
 scikit-learn
+wikipedia
