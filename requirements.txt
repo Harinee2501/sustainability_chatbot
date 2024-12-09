@@ -4,3 +4,5 @@ requests
 nltk
 scikit-learn
 wikipedia
+feedparser
+requests
