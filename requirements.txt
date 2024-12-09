@@ -2,3 +2,4 @@ streamlit
 wikipedia-api
 requests
 nltk
+scikit-learn
