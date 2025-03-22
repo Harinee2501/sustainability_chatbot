@@ -7,14 +7,12 @@ import streamlit as st
 from news_api import fetch_news
 from research_fetcher import fetch_research, fetch_wikipedia_summary
 
-# Fix SSL certificate issues for NLTK
 try:
     _create_unverified_https_context = ssl._create_unverified_context
     ssl._create_default_https_context = _create_unverified_https_context
 except AttributeError:
     pass
 
-# Download NLTK resources
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -97,7 +95,6 @@ intents = {
     }
 }
 
-# Data preparation
 def preprocess_intents(intents):
     patterns = []
     labels = []
@@ -117,7 +114,7 @@ X = vectorizer.fit_transform(patterns)  # Convert patterns to numerical features
 classifier = LogisticRegression()
 classifier.fit(X, labels)  # Fit the data to the classifier
 
-# Generate chatbot response
+
 def get_response(user_input):
     user_input = user_input.lower()  # Lowercase the input
     user_vector = vectorizer.transform([user_input])  # Vectorize user input
@@ -125,10 +122,10 @@ def get_response(user_input):
     responses = intents[prediction]["responses"]  # Fetch responses
     return random.choice(responses)  # Randomly select a response
 
-# Combined Streamlit app
+
 st.title("Sustainability Hub 🌱")
 
-# Sidebar for navigation
+
 option = st.sidebar.selectbox("Choose a feature", ["Chatbot", "News", "Research", "Home"])
 
 if option == "Home":
